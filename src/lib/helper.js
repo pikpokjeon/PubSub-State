@@ -2,24 +2,15 @@
 const pipe = (initVal, ...fns) => fns.reduce((returned, fn) => fn(returned), initVal)
 
 
-const ack = ({ _store, topics }) => topics.reduce((updated,topic) => 
-{
-    const [data, subs] = [ _store[topic].data, _store[topic].subs ]
-    pipe(data, ...subs), Object.assign(updated.data, Object.assign({},{...data} ))
-}, { data:{}} )
+const ack = ({ _store, topics }) => topics.reduce((_, topic) => pipe(_store[topic].data , ..._store[topic].subs), -1 )
 
 
 
-const subscribe = ({ _store, topics, sub }) =>
-{
-
-}
- {
-    for (const topic of topics) {
-        _store[topic].subs.push(...sub)
-    }
-    return { _store, topics }
-}
+const subscribe = ({ _store, topics, sub }) =>  _store.reduce( (_, s) => 
+    {
+        topics.map( topic => Object.assign( _store,  Object.assign({[topic]:subs},{[topic]: [subs,...sub]} )))
+    },_store)
+   
 
 
 
