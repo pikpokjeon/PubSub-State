@@ -1,0 +1,26 @@
+{
+  "name": "pubsub-state",
+  "version": "1.0.5",
+  "description": "simple state management",
+  "main": "rollup.config.js",
+  "dependencies": {
+    "jest": "^27.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pikpokjeon/PubSub-State.git"
+  },
+  "keywords": [
+    "store"
+  ],
+  "author": "pikpok",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pikpokjeon/PubSub-State/issues"
+  },
+  "homepage": "https://github.com/pikpokjeon/PubSub-State#readme"
+}
