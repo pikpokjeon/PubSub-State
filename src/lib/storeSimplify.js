@@ -32,6 +32,13 @@ const Store = (initMsg) =>
 
     const getData = topic => initStore[topic]
 
+    const registerSub = ({topic,subs}) => 
+    { 
+        initStore[topic].sub.push(...subs) 
+        return {topic}
+    }
+
+  
 
 }
 
