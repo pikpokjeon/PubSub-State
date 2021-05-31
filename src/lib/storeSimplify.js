@@ -42,7 +42,9 @@ const Store = (initMsg) =>
 
     const setData = (topic,msg) => pipe({topic,msg} , updaterData, ack)
 
-   
+    const register = (topic, ...subs) => pipe({topic, ...subs}, registerSub, ack)
+
+    const action = fn => (...args) => updaterData(fn(...args,getData(topic)) ?? {} )
   
 
 }
