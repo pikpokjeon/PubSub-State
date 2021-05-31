@@ -30,6 +30,8 @@ const Store = (initMsg) =>
         return {topic}
     }
 
-   
+    const getData = topic => initStore[topic]
+
+
 }
 
