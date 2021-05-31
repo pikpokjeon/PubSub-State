@@ -38,6 +38,8 @@ const Store = (initMsg) =>
         return {topic}
     }
 
+    const ack = ({topic}) => initStore[topic].sub.forEach( fn => fn(initStore[topic]))
+
   
 
 }
