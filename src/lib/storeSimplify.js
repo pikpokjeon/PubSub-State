@@ -40,6 +40,9 @@ const Store = (initMsg) =>
 
     const ack = ({topic}) => initStore[topic].sub.forEach( fn => fn(initStore[topic]))
 
+    const setData = (topic,msg) => pipe({topic,msg} , updaterData, ack)
+
+   
   
 
 }
