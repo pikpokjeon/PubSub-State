@@ -1,7 +1,9 @@
 # PubSub-State<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fpikpokjeon%2FPubSub-State&count_bg=%23FFAD0F&title_bg=%23555555&icon=&icon_color=%23984040&title=%EB%B0%A9%EB%AC%B8%EC%9E%90&edge_flat=true"/></a>
 > ### <bold> PubSub 패턴에 영감을 받은 앱의 데이터 상태를 관리하는 라이브러리 </bold>
 ---
-
+### 라이브러리를 사용한 프로젝트
+#### 1.[Summoner search page](https://github.com/pikpokjeon/summoner-search-page2)
+#### 2.[Calendate-js](https://github.com/pikpokjeon/calendate-js)
  ``` 
  다중 함수가 같은 출처의 동적 데이터에 접근하고 있다면, 어떻게 이 데이터의 변화를 추적하며 관리를 하면 좋을까요. 
  ```
