@@ -4,6 +4,8 @@
 ### 라이브러리를 사용한 프로젝트
 #### 1.[Summoner search page](https://github.com/pikpokjeon/summoner-search-page2)
 #### 2.[Calendate-js](https://github.com/pikpokjeon/calendate-js)
+
+Todo: npm github package 배포
  ``` 
  다중 함수가 같은 출처의 동적 데이터에 접근하고 있다면, 어떻게 이 데이터의 변화를 추적하며 관리를 하면 좋을까요. 
  ```
