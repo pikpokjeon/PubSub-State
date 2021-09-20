@@ -7,10 +7,11 @@
 
 [NPM Package](https://www.npmjs.com/package/pubsub-state)
 - Working on Documentation
+- possible to use in umd,cjs,es
 # How to use
 ### Store instantiation
 ``` javascript
-import {Pubsub} from 'pubsub'
+import {Pubsub} from 'pubsub-state'
 
 // When there is predefined state data
 const predefinedData =
