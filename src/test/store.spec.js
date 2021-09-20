@@ -1,16 +1,14 @@
-const {Store} = require('../lib/store')
+const {Pubsub} = require('../lib/pubsub')
 
 
 const predefinedData =
 {
     userInputs: {
-        // [Symbol.toStringTag] : 'userInputs', This will be set when publishing a topic with msgs
         w: 1500,
         d: [0, 230,],
 
     },
     chartEvent: {
-        // [Symbol.toStringTag] : 'chartEvent',
         lastIdx: -1,
         selectedIdx: {start: -1, end: -1}
 
@@ -41,26 +39,26 @@ const expectation =
 }
 
 
-const initStore = Store()
+const initPubsub = Pubsub()
 
-initStore.publish('userInput', predefinedData.userInputs)
-initStore.subscribe('userInput', (e) => console.log(e))
+initPubsub.publish('userInput', predefinedData.userInputs)
+initPubsub.subscribe('userInput', (e) => console.log(e))
 
-initStore.action('userInput', ({w}) => ({w: 1700}))
+initPubsub.action('userInput', ({w}) => console.log(w))
 
-console.log(initStore.getData('userInput'))
+console.log(initPubsub.getData('userInput'))
 
-const secondStore = Store(predefinedData)
+const secondPubsub = Pubsub(predefinedData)
 
-console.log(secondStore.getData('chartEvent'))
+console.log(secondPubsub.getData('chartEvent'))
 
-// const mutate = (store, sub, msgs) =>
+// const mutate = (Pubsub, sub, msgs) =>
 // {
-//     test('Check mutated store data', () =>
+//     test('Check mutated Pubsub data', () =>
 //     {
 //     })
 // }
 
-// describe('Store')
+// describe('Pubsub')
 
 

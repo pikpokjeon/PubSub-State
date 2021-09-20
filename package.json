@@ -1,9 +1,12 @@
 {
   "name": "pubsub-state",
-  "version": "1.0.5",
-  "description": "simple state management",
-  "main": "rollup.config.js",
+  "version": "1.1.8",
+  "description": "simple data-state management library",
+  "main": "dist/cjs/pubsub.js",
+  "module": "dist/es/pubsub.js",
+  "browser": "dist/umd/pubsub.js",
   "dependencies": {
+    "@rollup/plugin-commonjs": "^20.0.0",
     "jest": "^27.0.1"
   },
   "devDependencies": {
