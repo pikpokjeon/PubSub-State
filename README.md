@@ -5,4 +5,5 @@
 #### 1.[Summoner search page](https://github.com/pikpokjeon/summoner-search-page2)
 #### 2.[Calendate-js](https://github.com/pikpokjeon/calendate-js)
 
-Todo: npm github package 배포
+[NPM Package](https://www.npmjs.com/package/pubsub-state)
+- Working on Documentation
