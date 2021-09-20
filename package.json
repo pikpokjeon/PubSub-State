@@ -1,23 +1,20 @@
 {
   "name": "pubsub-state",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "simple data-state management library",
   "main": "dist/cjs/pubsub.js",
   "module": "dist/es/pubsub.js",
   "browser": "dist/umd/pubsub.js",
-  "dependencies": {
-    "@rollup/plugin-commonjs": "^20.0.0",
-    "jest": "^27.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.6",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
-    "rollup": "^2.56.3"
+    "rollup": "^2.56.3",
+    "@rollup/plugin-commonjs": "^20.0.0"
   },
   "scripts": {
-    "test": "jest",
     "build": "rollup --config"
   },
   "repository": {
