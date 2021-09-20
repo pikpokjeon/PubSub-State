@@ -9,18 +9,33 @@ const {pipe} = require('./helper')
 const Store = (initData) =>
 {
 
-    let _store = {}
+    let _store = {subs: []}
 
-    const ack = ({topic}) => _store[topic].subs.forEach(sub => sub(_store[topic].data))
+    const ack = ({topic}) =>
+    {
+        if (topic === 'store') {_store.subs.forEach(sub => sub(_store))}
+        else
+        {
+            _store[topic].subs.forEach(sub => sub(_store[topic].data))
+        }
+    }
 
     const subscribe = ({topic, sub}) => 
     {
-        if (!_store[topic]) Object.assign(_store, {[topic]: {subs: []}})
+        if (topic === 'store')
+        {
+            _store.subs.push(sub)
+        }
         else
         {
-            _store[topic].subs.push(sub)
+            if (!_store[topic]) Object.assign(_store, {[topic]: {subs: []}})
+            else
+            {
+                _store[topic].subs.push(sub)
+            }
         }
         return {topic}
+
     }
 
     const getData = (_store) => (topic) => _store[topic].data
