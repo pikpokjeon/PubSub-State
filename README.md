@@ -56,7 +56,6 @@ Subscriber functions will be called when ```store.action``` is executed.
 ``` javascript
 store.subscribe('chartEvent', (data) => console.log(data))
 store.subscribe('chartEvent', (data) => console.log(data.lastIdx + 1))
-store.subscribe('chartEvent', (data) => App(store,data))
 ```
 ```
     chartEvent: {
@@ -83,7 +82,7 @@ store.action('chartEvent', ({lastIdx}) => {
 - Then it executes all target topic's subscribers
 ```
     chartEvent: {
-        lastIdx: -1,
+        lastIdx: 2,
         selectedIdx: {start: -1, end: -1},
         sub:[
         (data) => console.log(data),            //1
