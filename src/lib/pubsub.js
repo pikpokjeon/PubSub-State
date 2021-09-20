@@ -1,12 +1,11 @@
-const {pipe} = require('./helper')
-
+const pipe = (initVal, ...fns) => fns.reduce((returned, fn) => fn(returned), initVal)
 
 /**
  * 
  * @param {*} msg data
  * @param {*} sub subscriber that subscribe the data
  */
-const Store = (initData) =>
+const Pubsub = (initData) =>
 {
 
     let _store = {subs: []}
@@ -64,4 +63,4 @@ const Store = (initData) =>
 
 }
 
-module.exports = {Store}
+module.exports = {Pubsub}

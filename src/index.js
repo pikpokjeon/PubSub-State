@@ -1,1 +1,0 @@
-const { Store, store } = require('./lib/store')
