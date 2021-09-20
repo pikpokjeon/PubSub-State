@@ -1,13 +1,12 @@
 const {pipe} = require('./helper')
 
-// import { Store, predefinedData } from './store'
 
 /**
  * 
  * @param {*} msg data
  * @param {*} sub subscriber that subscribe the data
  */
-const Store = (msgs, sub) =>
+const Store = (initData) =>
 {
 
     let _store = {}
@@ -26,7 +25,7 @@ const Store = (msgs, sub) =>
 
     const getData = (_store) => (topic) => _store[topic].data
 
-    const setData = (topic, msgs) =>
+    const publish = (topic, msgs) =>
     {
         const prevStore = _store[topic]
         const temp = {
@@ -40,11 +39,11 @@ const Store = (msgs, sub) =>
         return {topic}
     }
 
-    const publish = (topic, msgs) => [pipe(setData(topic, msgs), ack)]
+    const setData = (topic, msgs) => [pipe(publish(topic, msgs), ack)]
 
-    const action = (topic, fn) => [pipe(setData(topic, fn(getData(_store)(topic)) ?? {}), ack)]
+    const action = (topic, fn) => [pipe(publish(topic, fn(getData(_store)(topic)) ?? {}), ack)]
 
-    if (msgs && sub) publish(msgs, sub)
+    if (initData) Object.entries(initData).forEach(([topic, data]) => publish(topic, data))
 
     return {setData, publish, subscribe: (topic, sub) => subscribe({topic, sub}), getData: getData(_store), action}
 
