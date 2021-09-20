@@ -39,13 +39,13 @@ const Store = (initData) =>
         return {topic}
     }
 
-    const setData = (topic, msgs) => [pipe(publish(topic, msgs), ack)]
+    const mutate = (topic, msgs) => [pipe(publish(topic, msgs), ack)]
 
     const action = (topic, fn) => [pipe(publish(topic, fn(getData(_store)(topic)) ?? {}), ack)]
 
     if (initData) Object.entries(initData).forEach(([topic, data]) => publish(topic, data))
 
-    return {setData, publish, subscribe: (topic, sub) => subscribe({topic, sub}), getData: getData(_store), action}
+    return {mutate, publish, subscribe: (topic, sub) => subscribe({topic, sub}), getData: getData(_store), action}
 
 }
 
