@@ -93,7 +93,7 @@ store.action('chartEvent', ({lastIdx}) => {
 ``` javascript
 // 1 >{
         lastIdx: 2,
-        selectedIdx: {start: -1, end: -1
+        selectedIdx: {start: -1, end: 2
     }
 // 2 >3
         
