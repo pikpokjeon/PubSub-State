@@ -75,7 +75,7 @@ store.subscribe('chartEvent', (data) => console.log(data.lastIdx + 1))
 ``` javascript
 store.action('chartEvent', ({lastIdx}) => {
     const tempIdx = lastIdx > 0 ? 10 : 2
-    return ({lastIdx:tempIdx})
+    return ({lastIdx:tempIdx, selectedIdx:{end:tempIdx})
 })
 
 ```
@@ -83,7 +83,7 @@ store.action('chartEvent', ({lastIdx}) => {
 ```
     chartEvent: {
         lastIdx: 2,
-        selectedIdx: {start: -1, end: -1},
+        selectedIdx: {start: -1, end: 2},
         sub:[
         (data) => console.log(data),            //1
         (data) => console.log(data.lastIdx + 1),//2
